@@ -1,16 +1,11 @@
+import WishListItem from './WishListItem'
 export function WishList({wishes}) {
   return (
     <ul className='wish-list'>
         {wishes.map(wish => (
-          <li key={wish.id} 
-          className={`wish-list__item 
-          ${wish.completed ? 'wish-list__item--done' : ''}`}>
-            <input type="checkbox" 
-            checked={wish.completed} 
-            readOnly />
-            <label htmlFor={wish.id} >
-              {wish.text}</label>
-          </li>
+          <WishListItem key={wish.id}
+          wish={wish}>
+          </WishListItem>
         ))}
       </ul>
   )
