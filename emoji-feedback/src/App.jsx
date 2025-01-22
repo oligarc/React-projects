@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import FeedBackList from "./FeedBackList/FeedBackList";
 import SelectedFeedBackDisplay from "./SelectedFeedBackDisplay/SelectedFeedBackDisplay";
+import ResetFeedBackButton from "./ResetFeedBackButton/ResetFeedBackButton";
 
 function App() {
   const emojiList = [
@@ -28,6 +29,7 @@ function App() {
       {selectedFeedBack && (
         <SelectedFeedBackDisplay feedback={selectedFeedBack} />
       )}
+      <ResetFeedBackButton onClick={() => setSelectedFeedBack(null)}></ResetFeedBackButton>
     </>
   );
 }

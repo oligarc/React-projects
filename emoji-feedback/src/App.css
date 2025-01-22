@@ -57,3 +57,7 @@
 .emojiButton:focus {
   outline: 3px solid #3498db;
 }
+
+.mt-2 {
+  margin-top: 20px;
+}
