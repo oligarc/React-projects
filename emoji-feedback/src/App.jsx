@@ -7,8 +7,12 @@ function App() {
   const emojiList = [
     { id: 1, code: "😊", text: "Happy" },
     { id: 2, code: "😂", text: "Laughing" },
-    { id: 3, code: "😐", text: "Neutral" },
+    { id: 3, code: "😐", text: "Eh..." },
     { id: 4, code: "😉", text: "Wink" },
+    { id: 5, code: "😈", text: "Be the devil" },
+    { id: 6, code: "🙈", text: "Monkey" },
+    { id: 7, code: "💀", text: "Dead man" },
+    { id: 8, code: "👌", text: "Ou yeahhhh come onnnn" },
   ];
 
   const [selectedFeedBack, setSelectedFeedBack] = useState(null);
@@ -19,7 +23,7 @@ function App() {
 
   return (
     <>
-      <h1>Emoji Feedback</h1>
+      <h1 className="emojiFeedBack">Emoji Feedback</h1>
       <FeedBackList emojis={emojiList} onFeedBackSelect={handleFeedBackSelect} />
       {selectedFeedBack && (
         <SelectedFeedBackDisplay feedback={selectedFeedBack} />
