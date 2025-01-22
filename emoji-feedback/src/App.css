@@ -53,3 +53,7 @@
   margin-right: 5px;
   font-size: 150%;
 }
+
+.emojiButton:focus {
+  outline: 3px solid #3498db;
+}
