@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import TaskInput from './TaskInput/TaskInput'
 import TaskList from './TaskList/TaskList'
+import GeneralButton from './GeneralButton/GeneralButton'
 
 function App() {
 
@@ -25,7 +26,18 @@ function App() {
     listaTareasIniciales.filter(tarea => tarea.completada).length
   );
 
+  const[filtro,setFiltro] = useState('todas');
+  const tareasFiltradas = tareas.filter(tarea =>{
+    if(filtro === "completadas"){
+      return tarea.completada;
+    }
 
+    if(filtro === "pendientes"){
+      return !tarea.completada;
+    }
+
+    return true;
+  })
 
   useEffect(() =>{
     /*const tareasCompletadas = tareas.filter(tarea => tarea.completada).length;
@@ -42,8 +54,10 @@ function App() {
   return (
     <>
       <TaskInput onNuevaTarea={onNewTareaHandler} />
-      <TaskList tareas={tareas} setNuevasTareas={setNuevasTareas} />
+      <TaskList tareas={tareasFiltradas} setNuevasTareas={setNuevasTareas} />
       <h2>Número de tareas completadas : {tareasCompletas}</h2>
+      <GeneralButton text={'Ver las tareas hechas'} onClick={() => setFiltro("completadas")} />
+      <GeneralButton text={'Ver las tareas pendientes'} onClick={() => setFiltro("pendientes")} />
     </>
   )
 }
