@@ -5,6 +5,14 @@
   text-align: center;
 }
 
+body {
+  background-color: #242c2a;
+}
+
+h1 {
+  color: white;
+}
+
 .card {
   padding: 2em;
 }
