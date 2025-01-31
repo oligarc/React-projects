@@ -16,24 +16,24 @@ function UserInput({
         inputLable={"Initial Investment"}
         value={init}
         onChange={(e) => {
-          setInit(e.target.value);
+          setInit(Number(e.target.value));
           console.log(e.target.value);
         }}
       />
       <GeneralInput
         inputLable={"Annual Investment"}
         value={annual}
-        onChange={(e) => setAnnual(e.target.value)}
+        onChange={(e) => setAnnual(Number(e.target.value))}
       />
       <GeneralInput
         inputLable={"Expected Return"}
         value={expected}
-        onChange={(e) => setExpected(e.target.value)}
+        onChange={(e) => setExpected(Number(e.target.value))}
       />
       <GeneralInput
         inputLable={"Duration (years)"}
         value={duration}
-        onChange={(e) => setDuration(e.target.value)}
+        onChange={(e) => setDuration(Number(e.target.value))}
       />
     </>
   );
