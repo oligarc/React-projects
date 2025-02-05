@@ -1,11 +1,24 @@
 import { JokeDisplayProps } from "../types/interfaces"
 import Button from "./Button"
-function JokeDisplay({joke} : JokeDisplayProps) {
+import RandomGif from "./RandomGif"
+function JokeDisplay({joke,showPunchLine,handleRevealPunchline} : JokeDisplayProps) {
 
   return (
     <>
-    <p>{joke.setup}</p>
-    <Button buttonText="Reveal Punchline" onClick={} />
+    {joke && (
+      <>
+        <p>{joke.setup}</p>
+        <Button buttonText="Reveal Punchline"
+                onClick={handleRevealPunchline} />
+        
+        {showPunchLine && (
+            <>
+              <p>{joke.punchline}</p>
+              <RandomGif />
+            </>
+          )}
+      </>
+    )}
     </>
   )
 }

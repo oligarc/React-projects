@@ -9,11 +9,16 @@ import JokeDisplay from './Components/JokeDisplay';
 function App() {
 
   const [joke,setJoke] = useState<Joke | null>(null); //Joke could be a Joke or a null, for that you use the |
+  const [showPunchLine,setShowPunchLine] = useState(false); //This is for the punchLine to appear
   const handleJoke =  () => {
      getRandomJoke().then((newJoke: Joke | null) =>{
       setJoke(newJoke);
+      setShowPunchLine(false);
      });
   }
+  const handleRevealPunchline = () => {
+    setShowPunchLine(true); 
+  };
 
   
 
@@ -22,7 +27,9 @@ function App() {
     <div className='app'>
     <Header titleForPage='LOL GENERATOR' />
     <Button buttonText='Get Joke' onClick={handleJoke}/>
-    {joke && (<JokeDisplay joke={joke} onClick={}  />)}
+    {joke && (<JokeDisplay joke={joke} 
+                            showPunchLine={showPunchLine}
+                            handleRevealPunchline={handleRevealPunchline}/>)}
     </div>
       
     </>

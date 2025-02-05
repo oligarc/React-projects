@@ -11,5 +11,11 @@ export interface HeaderProps {
 
 export interface JokeDisplayProps{
     joke : Joke | null,
-    onClick: () => void;
+    showPunchLine : boolean,
+    handleRevealPunchline : () => void;
 }
+
+export interface ButtonProps {
+    buttonText: string;
+    onClick: () => void;
+    }

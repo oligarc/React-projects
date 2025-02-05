@@ -1,8 +1,4 @@
-interface ButtonProps {
-    buttonText: string;
-    onClick: () => void;
-    }
-
+import { ButtonProps } from "../types/interfaces";
 function Button({buttonText, onClick} : ButtonProps) {
   return (
     <button className="button" onClick={onClick}>
