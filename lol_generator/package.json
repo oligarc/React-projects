@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/oligarc/React-projects/tree/main/lol_generator",
+  "homepage": "https://oligarc.github.io/React-projects/lol_generator",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
