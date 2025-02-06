@@ -6,7 +6,7 @@ function Header({enterpriseName} : HeaderProps) {
   return (
     <header className="flex justify-between items-center p-4">
       <div className="flex items-center gap-3">
-      <img src="/logoHeader.jpg" alt="" className="w-14" />
+      <img src="/checkdef.png" alt="" className="w-14" />
       <h1 className="text-3xl text-gray-700">{enterpriseName}</h1>
       </div>
       <div>
